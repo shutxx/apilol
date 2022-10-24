@@ -1,0 +1,19 @@
+from django.contrib import admin
+
+from .models import Campeao, Regiao, Funcao
+
+
+@admin.register(Campeao)
+class CampeaoAdmin(admin.ModelAdmin):
+    list_display = ('nome', 'funcao', 'lore', 'regiao', 'passiva', 'descricaopassiva', 'skillq', 'descricaoskillq',
+                    'skillw', 'descricaoskillw', 'skille', 'descricaoskille', 'skillr', 'descricaoskillr', 'foto')
+
+
+@admin.register(Regiao)
+class RegiaoAdmin(admin.ModelAdmin):
+    list_display = ('nomeregiao', 'lore_regiao',)
+
+
+@admin.register(Funcao)
+class FuncaoAdmin(admin.ModelAdmin):
+    list_display = ['funcao']
