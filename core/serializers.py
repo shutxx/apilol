@@ -23,7 +23,6 @@ class RegiaoSerializer(serializers.ModelSerializer):
 
 
 class CampeaoSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Campeao
         fields = [

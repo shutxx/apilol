@@ -1,7 +1,17 @@
+from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.generics import get_object_or_404
 from .models import Campeao, Regiao, Funcao
 from .serializers import CampeaoSerializer, RegiaoSerializer, FuncaoSerializer
+
+
+def index(request):
+    campeoes = Campeao.objects.all()
+
+    context = {
+        'campeoes': campeoes
+    }
+    return render(request, 'index.html', context)
 
 
 class CampeoesView(generics.ListAPIView):
@@ -50,3 +60,4 @@ class FuncoesView(generics.ListAPIView):
 class FuncaoView(generics.RetrieveAPIView):
     queryset = Funcao.objects.all()
     serializer_class = FuncaoSerializer
+
