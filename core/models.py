@@ -30,7 +30,7 @@ class Regiao(models.Model):
 
 class Campeao(models.Model):
     id = models.AutoField(primary_key=True)
-    nome = models.CharField(blank=False, max_length=100)
+    campeao = models.CharField(blank=False, max_length=100)
     funcao = models.ForeignKey(Funcao, blank=False, on_delete=models.CASCADE)
     lore = models.TextField(blank=False, default='')
     regiao = models.ForeignKey(Regiao, blank=False, on_delete=models.CASCADE)
@@ -53,4 +53,4 @@ class Campeao(models.Model):
         ordering = ['id']
 
     def __str__(self):
-        return self.nome
+        return self.campeao

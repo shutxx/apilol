@@ -21,11 +21,15 @@ class CampeaoView(generics.RetrieveAPIView):
     serializer_class = CampeaoSerializer
 
     def get_object(self):
-        if self.kwargs.get('campeao_pk'):
+        if self.kwargs.get('regiao_pk'):
             return get_object_or_404(self.get_queryset(),
-                                     campeao_id=self.kwargs.get('campeao_pk'),
-                                     regiao_id=self.kwargs.get('regiao_pk'))
-        return get_object_or_404(self.get_queryset(), pk=self.kwargs.get('regiao_pk'))
+                                     regiao_id=self.kwargs.get('regiao_pk'),
+                                     pk=self.kwargs.get('campeao_pk'))
+        elif self.kwargs.get('funcao_pk'):
+            return get_object_or_404(self.get_queryset(),
+                                     funcao_id=self.kwargs.get('funcao_pk'),
+                                     pk=self.kwargs.get('campeao_pk'))
+        return get_object_or_404(self.get_queryset(), pk=self.kwargs.get('campeao_pk'))
 
 
 class RegioesView(generics.ListAPIView):

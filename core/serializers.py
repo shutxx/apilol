@@ -28,7 +28,7 @@ class CampeaoSerializer(serializers.ModelSerializer):
         model = Campeao
         fields = [
             'id',
-            'nome',
+            'campeao',
             'funcao',
             'lore',
             'regiao',
