@@ -6,20 +6,20 @@
 </head>
 <body>
     <div>
-        <h1>Campeao</h1>
+        <h1>Campeoes</h1>
         <hr>
             <table>
                 <thead>
                     <tr>
-                        <th>Campeao</th>
+                        <th>Campeoes</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for campeao in campeoes %}
                         <tr>
                             <td>{{ campeao.id }}</td>
-                            <td><a href="">{{ campeao.campeao }}</a></td>
-                            <td><img src="{{ campeao.foto.url }}" alt="imagem {{ campeao.descricao }}" width="300"></td>
+                            <td>{{ campeao.campeao }}</td>
+                            <td><a href="{% url 'personagem' campeao.id %}"><img src="{{ campeao.foto.url }}" alt="imagem {{ campeao.descricao }}" width="300"></a></td>
                         </tr>
                     {% endfor %}
                 </tbody>

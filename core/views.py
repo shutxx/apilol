@@ -14,6 +14,15 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+def campeao(request, pk):
+    campe = get_object_or_404(Campeao, id=pk)
+
+    context = {
+        'campeao': campe
+    }
+    return render(request, 'personagem.html', context)
+
+
 class CampeoesView(generics.ListAPIView):
     queryset = Campeao.objects.all()
     serializer_class = CampeaoSerializer
