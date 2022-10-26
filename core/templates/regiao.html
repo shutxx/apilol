@@ -9,6 +9,10 @@
     <a href="{% url 'regis' %}" ><p>Todas as Regioes de Runeterra</p></a>
     <h1>Bem Vindo a {{ regiao.nomeregiao }}</h1>
     <p>{{ regiao.lore_regiao }}</p>
-    <p>{{ campeoes.regiao }}</p>
+        {% if regiao.nomeregiao == campeao.regiao %}
+            {% for campeao in campeoes %}
+                <p>{{ campeao.campeao }}:{{ campeao.regiao }}</p>
+            {% endfor %}
+        {% endif %}
 </body>
 </html>
