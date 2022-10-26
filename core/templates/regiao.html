@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Região</title>
+</head>
+<body>
+    <a href="{% url 'index' %}" ><p>Inicio</p></a>
+    <a href="{% url 'regis' %}" ><p>Todas as Regioes de Runeterra</p></a>
+    <h1>Bem Vindo a {{ regiao.nomeregiao }}</h1>
+    <p>{{ regiao.lore_regiao }}</p>
+    <p>{{ campeoes.regiao }}</p>
+</body>
+</html>

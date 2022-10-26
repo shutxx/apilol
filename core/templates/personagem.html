@@ -5,11 +5,13 @@
     <title>Campeão</title>
 </head>
 <body>
-    <a href="{% url 'index' %}">Index</a>
+    <a href="{% url 'todos' %}">Todos os Personagens</a>
+    <a href="{% url 'index' %}" >Inicio</a>
+
     <div>
+        <h1>Nome: {{ campeao.campeao }}</h1>
         <img src="{{ campeao.foto.url }} " alt="imagem {{ campeao.descricao }}">
     </div>
-    <h1>Nome: {{ campeao.campeao }}</h1>
     <h1>Função: {{ campeao.funcao }}</h1>
     <h1>Região: {{ campeao.regiao }}</h1>
     <h1>Lore: {{ campeao.lore }}</h1>

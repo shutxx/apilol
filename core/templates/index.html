@@ -2,28 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>API de LOL</title>
 </head>
 <body>
-    <div>
-        <h1>Campeoes</h1>
-        <hr>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Campeoes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for campeao in campeoes %}
-                        <tr>
-                            <td>{{ campeao.id }}</td>
-                            <td>{{ campeao.campeao }}</td>
-                            <td><a href="{% url 'personagem' campeao.id %}"><img src="{{ campeao.foto.url }}" alt="imagem {{ campeao.descricao }}" width="300"></a></td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-    </div>
+  <h1>API de league of legends</h1>
+  <a href="{% url 'todos' %}" ><p>Todos os Campeoes</p></a>
+  <a href="{% url 'regis' %}" ><p>Todas as Regioes de Runeterra</p></a>
+  <a href="{% url 'func' %}" ><p>Todas as Funções</p></a>
 </body>
 </html>

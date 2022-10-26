@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campeoes</title>
+</head>
+<body>
+    <div>
+        <h1>Campeoes</h1>
+        <a href="{% url 'index' %}" >Inicio</a>
+
+        <hr>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Campeoes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for campeao in campeoes %}
+                        <tr>
+                            <td>{{ campeao.id }}</td>
+                            <td>{{ campeao.campeao }}</td>
+                            <td><a href="{% url 'personagem' campeao.id %}"><img src="{{ campeao.foto.url }}" alt="imagem {{ campeao.descricao }}" width="300"></a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+</body>
+</html>

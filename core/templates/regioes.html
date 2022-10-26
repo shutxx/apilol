@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regiões</title>
+</head>
+<body>
+    <div>
+        <h1>Regiões</h1>
+        <a href="{% url 'index' %}" >Inicio</a>
+        <hr>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Regiões</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for regiao in regioes %}
+                        <tr>
+                            <td>{{ regiao.id }}</td>
+                            <td><a href="{% url 'regi' regiao.id %}">{{ regiao.nomeregiao }}</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+</body>
+</html>

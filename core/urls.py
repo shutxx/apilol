@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import CampeaoView, CampeoesView, RegiaoView, RegioesView, FuncaoView, FuncoesView, index
+from .views import CampeaoView, CampeoesView, RegiaoView, RegioesView, FuncaoView, FuncoesView
 
 
 urlpatterns = [

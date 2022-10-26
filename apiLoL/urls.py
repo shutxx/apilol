@@ -3,12 +3,18 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from django.urls import path, include
 
-import core.views
-from core.views import index, campeao
+from core.views import index, todos, campeao, regioes, regiao, funcao
 
 urlpatterns = [
     path('', index, name='index'),
+
+    path('personagens/', todos, name='todos'),
     path('personagem/<int:pk>', campeao, name='personagem'),
+
+    path('regioes/', regioes, name='regis'),
+    path('regiao/<int:pk>', regiao, name='regi'),
+
+    path('funcao/', funcao, name='func'),
 
     path('api/v1/', include('core.urls')),
     path('admin/', admin.site.urls),
