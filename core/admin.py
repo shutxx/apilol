@@ -11,7 +11,7 @@ class CampeaoAdmin(admin.ModelAdmin):
 
 @admin.register(Regiao)
 class RegiaoAdmin(admin.ModelAdmin):
-    list_display = ('nomeregiao', 'lore_regiao',)
+    list_display = ('nomeregiao', 'lore_regiao', 'fotoregiao')
 
 
 @admin.register(Funcao)

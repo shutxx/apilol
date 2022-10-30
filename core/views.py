@@ -10,15 +10,22 @@ FUNÇÕES DOS TEMPLATES
 
 
 def index(request):
-    return render(request, 'index.html')
+    func = Funcao.objects.all()
+
+    context = {
+        'funcoes': func
+    }
+    return render(request, 'index.html', context)
 
 
 # Regiões de runettera
 def regioes(request):
     regi = Regiao.objects.all()
+    func = Funcao.objects.all()
 
     context = {
-        'regioes': regi
+        'regioes': regi,
+        'funcoes': func
     }
     return render(request, 'regioes.html', context)
 
@@ -27,11 +34,12 @@ def regioes(request):
 def regiao(request, pk):
     regia = get_object_or_404(Regiao, id=pk)
     camp = Campeao.objects.all()
-    print(camp)
+    func = Funcao.objects.all()
 
     context = {
         'regiao': regia,
-        'campeoes': camp
+        'campeoes': camp,
+        'funcoes': func
     }
     return render(request, 'regiao.html', context)
 
@@ -39,9 +47,11 @@ def regiao(request, pk):
 # Todos os campeões do jogo
 def todos(request):
     campeoes = Campeao.objects.all()
+    func = Funcao.objects.all()
 
     context = {
-        'campeoes': campeoes
+        'campeoes': campeoes,
+        'funcoes': func
     }
     return render(request, 'todos.html', context)
 
@@ -49,20 +59,29 @@ def todos(request):
 # Um campeão específico
 def campeao(request, pk):
     campe = get_object_or_404(Campeao, id=pk)
+    func = Funcao.objects.all()
+    regi = Regiao.objects.all()
 
     context = {
-        'campeao': campe
+        'campeao': campe,
+        'funcoes': func,
+        'regioes': regi
     }
     return render(request, 'personagem.html', context)
 
 
-def funcao(request):
+def funcao(request, pk):
     func = Funcao.objects.all()
+    funca = get_object_or_404(Funcao, id=pk)
+    campeoes = Campeao.objects.all()
 
     context = {
-        'funcoes': func
+        'funcoes': func,
+        'funcao': funca,
+        'campeoes': campeoes,
+
     }
-    return render(request, 'funcoes.html', context)
+    return render(request, 'funcao.html', context)
 
 
 """

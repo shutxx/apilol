@@ -18,6 +18,7 @@ class Regiao(models.Model):
     id = models.AutoField(primary_key=True)
     nomeregiao = models.CharField(blank=False, max_length=255)
     lore_regiao = models.TextField(blank=False, default='')
+    fotoregiao = models.ImageField(blank=True)
 
     class Meta:
         verbose_name = 'Região'

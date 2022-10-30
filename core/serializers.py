@@ -19,6 +19,7 @@ class RegiaoSerializer(serializers.ModelSerializer):
             'id',
             'nomeregiao',
             'lore_regiao',
+            'fotoregiao',
         ]
 
 

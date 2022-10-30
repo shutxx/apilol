@@ -1,0 +1,13 @@
+#container-imagem {
+    position: relative;
+    height: 95vh;
+    width: 99,5vw;
+    /* adicionando imagem de fundo */
+    background-image: url(../../media/open-graph-2e582ae9fae8b0b396ca46ff21fd47a8.jpg);
+    background-size: cover;
+}
+footer{
+    margin-top: 1px black solid;
+    padding:  25px 0;
+    text-align: center;
+}

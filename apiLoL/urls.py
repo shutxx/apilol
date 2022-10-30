@@ -14,7 +14,7 @@ urlpatterns = [
     path('regioes/', regioes, name='regis'),
     path('regiao/<int:pk>', regiao, name='regi'),
 
-    path('funcao/', funcao, name='func'),
+    path('funcao/<int:pk>', funcao, name='funca'),
 
     path('api/v1/', include('core.urls')),
     path('admin/', admin.site.urls),
