@@ -6,10 +6,6 @@ footer{
     padding:  25px 0;
     text-align: center;
 }
-.zoom{
-    max-width: 100vw;
-    width:150px;
-}
 .zoom:hover{
     box-shadow:
         1px 1px #53a7ea,
@@ -18,3 +14,4 @@ footer{
     -webkit-transform: translateX(-3px);
     transform: translateX(-3px);
 }
+
